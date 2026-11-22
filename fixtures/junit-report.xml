@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="io.example.BookingTest" tests="4" failures="1" errors="1" skipped="1" time="3.2">
+    <testcase classname="io.example.BookingTest" name="create_booking" time="0.84"/>
+    <testcase classname="io.example.BookingTest" name="update_requires_token" time="0.41">
+      <failure message="Expected status code &lt;403&gt; but was &lt;200&gt;." type="java.lang.AssertionError">java.lang.AssertionError: Expected status code &lt;403&gt; but was &lt;200&gt;.</failure>
+    </testcase>
+    <testcase classname="io.example.BookingTest" name="get_booking_schema" time="0.30">
+      <error message="Connection refused: localhost/127.0.0.1:8080" type="java.net.ConnectException"/>
+    </testcase>
+    <testcase classname="io.example.BookingTest" name="search_by_name" time="0.00"><skipped/></testcase>
+  </testsuite>
+  <testsuite name="io.example.AuthTest" tests="2" failures="0" errors="0" skipped="0" time="1.1">
+    <testcase classname="io.example.AuthTest" name="token_issued" time="0.5">
+      <flakyFailure message="Read timed out" type="java.net.SocketTimeoutException"/>
+    </testcase>
+    <testcase classname="io.example.AuthTest" name="bad_password_rejected" time="0.6"/>
+  </testsuite>
+</testsuites>

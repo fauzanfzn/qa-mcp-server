@@ -1,0 +1,47 @@
+{
+  "config": { "version": "1.57.0" },
+  "suites": [
+    {
+      "title": "checkout/payment.spec.ts", "file": "checkout/payment.spec.ts",
+      "specs": [
+        { "title": "pays with saved card", "file": "checkout/payment.spec.ts", "tests": [
+          { "projectName": "chromium", "status": "expected", "results": [ { "status": "passed", "duration": 2310, "retry": 0 } ] } ] },
+        { "title": "shows error for declined card", "file": "checkout/payment.spec.ts", "tests": [
+          { "projectName": "chromium", "status": "unexpected", "results": [
+            { "status": "failed", "duration": 5120, "retry": 0, "error": { "message": "Error: expect(locator).toHaveText(expected)\n\nExpected string: \"Card declined\"\nReceived string: \"Something went wrong\"" } },
+            { "status": "failed", "duration": 5011, "retry": 1, "error": { "message": "Error: expect(locator).toHaveText(expected)\n\nExpected string: \"Card declined\"\nReceived string: \"Something went wrong\"" } } ] } ] },
+        { "title": "applies voucher", "file": "checkout/payment.spec.ts", "tests": [
+          { "projectName": "chromium", "status": "flaky", "results": [
+            { "status": "failed", "duration": 30000, "retry": 0, "error": { "message": "Test timeout of 30000ms exceeded." } },
+            { "status": "passed", "duration": 2900, "retry": 1 } ] } ] }
+      ]
+    },
+    {
+      "title": "auth/login.spec.ts", "file": "auth/login.spec.ts",
+      "suites": [
+        { "title": "Login", "file": "auth/login.spec.ts", "specs": [
+          { "title": "valid user can log in", "file": "auth/login.spec.ts", "tests": [
+            { "projectName": "chromium", "status": "expected", "results": [ { "status": "passed", "duration": 1500, "retry": 0 } ] } ] },
+          { "title": "locked user sees message", "file": "auth/login.spec.ts", "tests": [
+            { "projectName": "chromium", "status": "unexpected", "results": [
+              { "status": "failed", "duration": 30000, "retry": 0, "error": { "message": "Error: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByTestId('login-button')" } } ] } ] },
+          { "title": "remembers me", "file": "auth/login.spec.ts", "tests": [
+            { "projectName": "chromium", "status": "skipped", "results": [ { "status": "skipped", "duration": 0, "retry": 0 } ] } ] }
+        ] }
+      ]
+    },
+    {
+      "title": "api/orders.spec.ts", "file": "api/orders.spec.ts",
+      "specs": [
+        { "title": "GET /orders/:id returns order", "file": "api/orders.spec.ts", "tests": [
+          { "projectName": "api", "status": "unexpected", "results": [
+            { "status": "failed", "duration": 420, "retry": 0, "error": { "message": "Error: apiRequestContext.get: 503 Service Unavailable" } } ] } ] },
+        { "title": "GET /orders/:id/items returns items", "file": "api/orders.spec.ts", "tests": [
+          { "projectName": "api", "status": "unexpected", "results": [
+            { "status": "failed", "duration": 380, "retry": 0, "error": { "message": "Error: apiRequestContext.get: 503 Service Unavailable" } } ] } ] },
+        { "title": "order matches contract", "file": "api/orders.spec.ts", "tests": [
+          { "projectName": "api", "status": "expected", "results": [ { "status": "passed", "duration": 300, "retry": 0 } ] } ] }
+      ]
+    }
+  ]
+}

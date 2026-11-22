@@ -1,0 +1,27 @@
+{
+  "name": "qa-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server that gives AI assistants (Claude, Cursor) real QA tools: run tests, parse reports, triage failures, track flakiness, score release readiness, draft bug reports.",
+  "type": "module",
+  "bin": { "qa-mcp-server": "dist/index.js" },
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "start": "node dist/index.js",
+    "demo": "npm run build && node dist/scripts/demo.js"
+  },
+  "keywords": ["mcp", "model-context-protocol", "qa", "testing", "playwright", "junit", "claude"],
+  "author": "Muhammad Nur Fauzan",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}
